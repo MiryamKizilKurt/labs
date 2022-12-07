@@ -1,0 +1,159 @@
+/* 
+    Created on : Dec 2, 2022, 1:19:06 PM
+    Author     : 236325
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{    
+    background:url(best.webp)no-repeat center center fixed;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
+    background-size: 100% 100%; 
+    
+}
+
+.center {
+    margin: auto;
+    margin-top : 15%;
+    width: 60%;  
+    border: 3px solid green;
+    padding: 25px;
+    background-color: #1d1d1d;
+    color: #ffff33;
+    opacity: 0.8;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.LineCenter {
+    margin: auto;
+    margin-top : 15%;
+    width: 60%;  
+    padding: 25px;
+    background-color: #0.5;
+    color: #ffff33;
+    opacity: 0.8;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.button { 
+    display: inline-block;
+    width: 100px;
+    padding: 6px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 0 50px #0ef;
+    outline: none;
+    color: #fff;
+    background-color: #8ea2ad;
+    border: none;
+    border-radius: 6px;
+    
+}
+
+@keyframes animate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.button:hover {background-color: #3ba2d5;}
+
+.button:active {
+    background-color: #3ba2d5;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.mytable{
+  font-weight: bolder;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top : 5%;
+  width: 250%;
+  color: #f4f4fc;
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background: #000;
+  box-shadow: 0 0 50px #0ef;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+}
+.mytable:hover {
+  animation: animate 1s linear infinite;
+}
+.mytable.active {
+  transform: translateY(-450px);
+}
+.button:hover {
+  animation: animate 1s linear infinite;
+}
+.button.active {
+  transform: translateY(-450px);
+}
+
+td {
+    padding: 7px;
+    color: #f4f4fc;
+}
+
+input{
+    background-color:#f4f4fc;
+    color: #0c0c14;
+    font-size: 16px;
+    width: 300px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+caption{
+    font-size: 34px;
+    padding: 15px; 
+    background-color: #758d99; 
+    border: solid 1px;
+    color: white;
+    border-color: black;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1d1d1d;
+    box-shadow: 0 0 50px #0ef;
+    font-size: 36px;
+    color: #afeb00;
+    padding: 3px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.message{       
+    color: #ff3333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.navbar{
+  background: #000;
+  box-shadow: 0 0 50px #0ef;
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.xmllab.com/lab"
+           xmlns="http://www.xmllab.com/lab"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="nameFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Z][a-z]+[\s])+[A-Z][a-z]*" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="dobFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}/\d{1,2}/\d{4}"/>
+        </xs:restriction>   
+    </xs:simpleType>
+    
+    <xs:simpleType name="emailFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"/>
+        </xs:restriction>   
+    </xs:simpleType>
+    
+     <xs:simpleType name="ratingFormat">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>   
+    </xs:simpleType>
+    
+    <xs:complexType name="interestFormat">
+        <xs:sequence>
+            <xs:element name="interest" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="nameFormat" name="name"/>
+                        <xs:element type="xs:string" name="description"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>             
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="diary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="profile" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="nameFormat" name="name"/>
+                            <xs:element type="xs:string" name="introduction"/>
+                            <xs:element type="dobFormat" name="dob"/>
+                            <xs:element type="emailFormat" name="email"/>
+                            <xs:element type="interestFormat" name="interests" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!--add here for entry-->
+                <xs:element name="entry" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>                            
+                            <xs:element type="dobFormat" name="date"/>
+                            <xs:element type="xs:string" name="title"/>                                     
+                            <xs:element type="ratingFormat" name="rating"/>
+                            <xs:element type="xs:string" name="body"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>  
+                             
+            </xs:sequence>
+        </xs:complexType>        
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diary xmlns="http://www.xmllabs.com/labs"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.xmllabs.com/labs diary.xsd">
+    <profile>
+        <name>Sammy Kohg</name>
+        <introduction>
+            Hi, I'm Olaf, I'm originally from Germany, and I decided to start this diary to practice
+            my English.
+        </introduction>
+        <dob>1/1/2000</dob>
+        <email>Sammy.Kohg@gmail.com</email>
+        <interests>
+            <interest>
+                <name>Football Game</name>
+                <description>A ball game.</description>
+            </interest>
+            <interest>
+                <name>Led Tv</name>
+                <description>I like to watch the football show.</description>
+            </interest>
+        </interests>
+    </profile>
+
+    <entry>
+        <date>15/9/2012</date>
+        <title>I bought a new phone</title>
+        <rating>3</rating>
+        <body>
+            Today I bought a Galaxy S III to replace my old iPhone.
+        </body>
+    </entry>
+    <entry>
+        <date>16/10/2012</date>
+        <title>Busy day</title>
+        <rating>5</rating>
+        <body>
+            I have 3 assignments due today. I need coffee!
+        </body>
+    </entry>
+    <entry>
+        <date>17/10/2012</date>
+        <title>Zzz...</title>
+        <rating>4</rating>
+        <body>
+            The assignmenst are all in, and I need to sleep...
+        </body>
+    </entry>
+</diary>

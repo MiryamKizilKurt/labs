@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.xmllab.com/labshop"
+           xmlns="http://www.xmllab.com/labshop"
+           elementFormDefault="qualified">
+
+
+
+   <xs:simpleType name="nameFormat">
+        <xs:restriction base="xs:string">
+        </xs:restriction>             
+    </xs:simpleType>    
+
+
+
+   <xs:simpleType name="titleFormat">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="cdsetFormat">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{1}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+
+   <xs:simpleType name="priceFormat">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="\d{2}.\d{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="ratingFormat">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="\d{1}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+
+
+   <xs:element name="shop">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="movies" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="nameFormat" name="name"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+
+
+
+   <xs:element name="movies">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="movie" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="titleFormat" name="title"/>                   
+                            <xs:element type="cdsetFormat" name="cdset"/>
+                            <xs:element type="price" name="price"/>
+                            <xs:element type="ratingFormat" name="rating"/>                          
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
