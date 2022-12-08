@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">
                 <% session.invalidate(); %>
-                <h1 style=" color: #adff2f; font-size: 15px;"><%= user.getName() %> record has been deleted! <a href="index.jsp"> Click here </a> to go back home</p></h1>    
+                <h1 style=" color: #adff2f; font-size: 15px;"><%= user.getName() %> record has been deleted! <a class="button" href="index.jsp">Home</a></h1>    
                 </div>
             </div>
         </nav>
