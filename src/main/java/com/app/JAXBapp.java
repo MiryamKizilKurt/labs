@@ -25,14 +25,14 @@ public class JAXBapp {
         app.menu();
     }
     
-    private String filePath = "C:\\Users\\236349\\Documents\\NetBeansProjects\\labs\\src\\main\\webapp\\WEB-INF\\users.xml";
+    private String fileName = "C:\\Users\\236349\\Documents\\NetBeansProjects\\labs\\src\\main\\webapp\\WEB-INF\\users.xml";
     private Users users;
     private UserDAO userDAO;
     
     public JAXBapp() throws JAXBException, FileNotFoundException{  
         System.out.println("Loading JAXB app ...");
         userDAO = new UserDAO();
-        userDAO.setFileName(filePath);
+        userDAO.setFileName(fileName);
         users = userDAO.getUsers();
     }
     
@@ -94,7 +94,7 @@ public class JAXBapp {
         } else {
             System.out.println(" User " + name + " record added to XML");
             users.add(user);
-            userDAO.save(users, filePath);
+            userDAO.save(users, fileName);
         }
     }
     

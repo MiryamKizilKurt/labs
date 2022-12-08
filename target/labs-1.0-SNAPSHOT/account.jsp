@@ -4,6 +4,7 @@
     Author     : 236325
 --%>
 
+<%@page import="com.model.Users"%>
 <%@page import="com.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,6 +21,10 @@
         <%! 
             User user;
         %>
+        <% String filename = application.getRealPath("/WEB-INF/users.xml");%>
+        <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
+            <jsp:setProperty name="userDAO" property="fileName" value="<%=filename%>"/>
+        </jsp:useBean>
         <%
             String submitted = request.getParameter("submitted");
 
@@ -31,8 +36,12 @@
                 String dob = request.getParameter("dob");
                 user = (User) session.getAttribute("user");
                 user.update(ID, name, email, password, dob);     
+                Users users = userDAO.getUsers();
+                
+                userDAO.update(users, user);
+                
                 session.setAttribute("user", user);
-            }else{
+            } else {
                 user = (User) session.getAttribute("user");
             }
         %>
@@ -41,6 +50,7 @@
                 <div class="navbar-header navbar-left">
             <a class="button" href="logout.jsp">Logout</a>
             <a class="button" href="main.jsp">Main</a>
+            <a class="button" href="delete.jsp">Delete</a>
                 </div>
             </div>
         </nav>

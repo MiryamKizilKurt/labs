@@ -33,6 +33,8 @@
 
             if (user != null) {
                 session.setAttribute("user", user);
+            //    response.sendRedirect("main.jsp");
+                
             }else{
                 session.setAttribute("error", "User does not exist");
                 response.sendRedirect("login.jsp");

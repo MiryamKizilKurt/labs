@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <users>
-    
     <user>
         <ID>834281</ID>
         <name>John Smith</name>
         <email>john.smith@example.com</email>
         <password>Helloworld123</password>
-        <dob>12-02-1905</dob>
     </user>
-    
     <user>
         <ID>608493</ID>
         <name>Alice Ming</name>
         <email>alice.m@example.com</email>
         <password>Helloworld123</password>
-        <dob>01-21-1905</dob>
+    </user>
+    <user>
+        <ID>274763</ID>
+        <name>Miryam Boozarjmehr</name>
+        <email>miryam.boz@example.com</email>
+        <password>Helloworld123</password>
+        <DOB>2022-12-07</DOB>
     </user>
 </users>
