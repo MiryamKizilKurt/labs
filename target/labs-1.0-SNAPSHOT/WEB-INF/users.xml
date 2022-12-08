@@ -12,11 +12,4 @@
         <email>alice.m@example.com</email>
         <password>Helloworld123</password>
     </user>
-    <user>
-        <ID>274763</ID>
-        <name>Miryam Boozarjmehr</name>
-        <email>miryam.boz@example.com</email>
-        <password>Helloworld123</password>
-        <DOB>2022-12-07</DOB>
-    </user>
 </users>
