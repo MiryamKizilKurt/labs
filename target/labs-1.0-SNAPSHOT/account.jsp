@@ -33,16 +33,24 @@
                 String name = request.getParameter("name");
                 String email = request.getParameter("email");
                 String password = request.getParameter("password");
-                String dob = request.getParameter("dob");
+                String dob = request.getParameter("dob");                
                 user = (User) session.getAttribute("user");
-                user.update(ID, name, email, password, dob);     
+                user.update(ID, name, email, password, dob);
+                
                 Users users = userDAO.getUsers();
                 
                 userDAO.update(users, user);
                 
                 session.setAttribute("user", user);
             } else {
-                user = (User) session.getAttribute("user");
+                String userViewEmail = request.getParameter("email");
+                Users users = userDAO.getUsers();
+                User userView = users.user(userViewEmail);
+                if(userView != null){
+                    user = userView;
+                }else{
+                    user = (User) session.getAttribute("user");
+                }
             }
         %>
          <nav class="navbar navbar-dark bg-dark">

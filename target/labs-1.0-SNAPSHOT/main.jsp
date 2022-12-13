@@ -16,7 +16,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  
         <link rel="stylesheet" href="css/layout.css"/>
         <script type="text/javascript" src="js/index.js"></script>
-        <title>Blogs</title>
+        <!-- <title>Blogs</title> -->
     </head>
     <body onload="startTime()" >  
         <% String filename = application.getRealPath("/WEB-INF/users.xml"); %>

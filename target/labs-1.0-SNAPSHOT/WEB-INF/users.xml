@@ -5,11 +5,20 @@
         <name>John Smith</name>
         <email>john.smith@example.com</email>
         <password>Helloworld123</password>
+        <DOB>1905-01-21</DOB>
     </user>
     <user>
         <ID>608493</ID>
         <name>Alice Ming</name>
         <email>alice.m@example.com</email>
         <password>Helloworld123</password>
+        <DOB>1905-01-21</DOB>
+    </user>
+    <user>
+        <ID>382305</ID>
+        <name>Miryam</name>
+        <email>miryam.boz@example.com</email>
+        <password>Helloworld123</password>
+        <DOB>2022-11-28</DOB>
     </user>
 </users>

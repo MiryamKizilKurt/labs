@@ -61,8 +61,7 @@ public class User implements Serializable{
     public boolean match(User other){
         return this.ID == other.ID;
     }
-
-
+   
     public int getID() {
         return ID;
     }

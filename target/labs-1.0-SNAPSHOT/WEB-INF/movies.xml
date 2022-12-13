@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shop>
+    <name>Movie Land</name>
+    <movies>
+        <movie>
+            <title>The Lord of the Rings</title>
+            <cdset>3</cdset>
+            <price>36.90</price>
+            <rating>9</rating>
+        </movie>
+        <movie>
+            <title>Mad Max</title>
+            <cdset>4</cdset>
+            <price>26.50</price>
+            <rating>6</rating>
+        </movie>
+        <movie>
+            <title>The Avengers</title>
+            <cdset>3</cdset>
+            <price>60.00</price>
+            <rating>9</rating>
+        </movie>
+        <movie>
+            <title>American Pie</title>
+            <cdset>8</cdset>
+            <price>102.00</price>
+            <rating>8</rating>
+        </movie>
+        <movie>
+            <title>Die Hard</title>
+            <cdset>5</cdset>
+            <price>32.50</price>
+            <rating>5</rating>
+        </movie>
+    </movies>
+</shop>
