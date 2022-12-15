@@ -2,7 +2,6 @@
 <shop xmlns="http://www.xmllabs.com/labsshop"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.xmllabs.com/labsshop shop.xsd">
-<shop>
 
 
 
@@ -135,3 +134,4 @@
 
 
    </movies>
+   </shop>

@@ -5,26 +5,26 @@
         <html>
             <head>
                 <title>Admin View</title>
-                <!-- <link href="css/users.css" rel="stylesheet" type="text/css"></link> -->
+                <link href="css/users.css" rel="stylesheet" type="text/css"></link>
             </head>
             <body>
-                <div class="label">User List 
-                    <span class="center">
-                        <a class="button" href="index.jsp">Home</a>
-                    </span>
-                </div>
-                <xsl:apply-templates/>
-            </body>
-        </html>
-    </xsl:template>
-    <xsl:template match="users">
-        <table>
-            <thead>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Date of Birth</th>
-            </thead>
+    <div class="label" style="center; font-size: 20px; color: #afeb00;" colspan="2">User List 
+
+</div>
+<xsl:apply-templates/>
+</body>
+</html>
+</xsl:template>
+<xsl:template match="users">
+<table>
+
+<thead>
+<th style="text-align:  font-size: 20px; color: #afeb00;">ID</th>
+<th style="text-align:  font-size: 20px; color: #afeb00;">Name</th>
+<th style="text-align:  font-size: 20px; color: #afeb00;">Email</th>
+<th style="text-align:  font-size: 20px; color: #afeb00;">Date of Birth</th>
+</thead>
+
             <tbody>
                 <xsl:apply-templates/>
             </tbody>

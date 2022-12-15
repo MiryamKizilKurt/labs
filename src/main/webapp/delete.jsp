@@ -25,6 +25,7 @@
             User user = (User) session.getAttribute("user");
             Users users = userDAO.getUsers();
             userDAO.delete(users, user);
+            
         %>
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<admins>
+    
+    <admin>
+        <ID>123456</ID>
+        <name>Miryam Boz</name>
+        <email>miryam.boz@example.com</email>
+        <password>Helloworld123</password>
+        <dob>1905-01-21</dob>
+    </admin>
+    
+    <admin>
+        <ID>567891</ID>
+        <name>Bashir Omar</name>
+        <email>bashir.omar@example.com</email>
+        <password>Helloworld123</password>
+        <dob>1905-01-21</dob>
+    </admin>
+</admins>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.xmllabs.com/labs"
+           xmlns="http://www.xmllabs.com/labs"
+           elementFormDefault="qualified">
+    
+    <!--    Admin ID format-->
+    <xs:simpleType name="IDFormat">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{6}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="nameFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Z][a-z]+[\s])+[A-Z][a-z]*" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="emailFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]+\.[a-zA-Z]+@[a-zA-Z]+\.com" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="passwordFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][a-z]{8,}\d{2,}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="dobFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="numberFormat">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{1,2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="admins">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="admin" maxOccurs="5" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="IDFormat" name="ID"/>
+                            <xs:element type="nameFormat" name="name"/>                   
+                            <xs:element type="emailFormat" name="email"/>
+                            <xs:element type="passwordFormat" name="password"/>
+                            <xs:element type="dobFormat" name="dob"/>                        
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

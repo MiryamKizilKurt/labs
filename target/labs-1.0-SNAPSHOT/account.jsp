@@ -4,6 +4,8 @@
     Author     : 236325
 --%>
 
+
+
 <%@page import="com.model.Users"%>
 <%@page import="com.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -18,7 +20,7 @@
         <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body onload="startTime()">   
-        <%! 
+        <%!
             User user;
         %>
         <% String filename = application.getRealPath("/WEB-INF/users.xml");%>
@@ -27,65 +29,67 @@
         </jsp:useBean>
         <%
             String submitted = request.getParameter("submitted");
+            String emailView = request.getParameter("email");
+            Users users = userDAO.getUsers();
+
+            if (emailView != null) {
+                user = users.user(emailView);
+                session.setAttribute("emailView", emailView);
+            } else {
+                user = (User) session.getAttribute("user");
+            }
 
             if (submitted != null && submitted.equals("submitted")) {
                 int ID = Integer.parseInt(request.getParameter("ID"));
                 String name = request.getParameter("name");
                 String email = request.getParameter("email");
                 String password = request.getParameter("password");
-                String dob = request.getParameter("dob");                
-                user = (User) session.getAttribute("user");
-                user.update(ID, name, email, password, dob);
-                
-                Users users = userDAO.getUsers();
-                
-                userDAO.update(users, user);
-                
-                session.setAttribute("user", user);
-            } else {
-                String userViewEmail = request.getParameter("email");
-                Users users = userDAO.getUsers();
-                User userView = users.user(userViewEmail);
-                if(userView != null){
-                    user = userView;
-                }else{
-                    user = (User) session.getAttribute("user");
+                String dob = request.getParameter("dob");
+                emailView = (String) session.getAttribute("emailView");
+                if (emailView != null) {
+                    user = users.user(emailView);
                 }
+                user.update(ID, name, email, password, dob);
+                userDAO.update(users, user);
+                session.setAttribute("user", user);
             }
         %>
-         <nav class="navbar navbar-dark bg-dark">
+
+        <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">
-            <a class="button" href="logout.jsp">Logout</a>
-            <a class="button" href="main.jsp">Main</a>
-            <a class="button" href="delete.jsp">Delete</a>
+                    <a class="button" href="logout.jsp">Logout</a>
                 </div>
             </div>
         </nav>
         <div class="container-fluid">
             <div class="row">
-            <form method="POST" action="account.jsp">
-                <table class="mytable">
-                    <thead><th style="text-align: center; font-size: 20px; color: #afeb00;" colspan="2">Edit User <span class="message"><%= (submitted != null) ? "Update is Successful" : ""%></span></th></thead>
-                    <tr><td>ID: </td><td><input type="text" name="ID" value="${user.ID}" readonly="true" /></td></tr>
-                    <tr><td>Name: </td><td><input type="text" name="name" value="${user.name}" /></td></tr>
-                    <tr><td>Email: </td><td><input type="text" name="email" value="${user.email}" readonly="true"/></td></tr>
-                    <tr><td>Password: </td><td><input type="password" name="password" value="${user.password}" /></td></tr>
+                <form method="POST" action="account.jsp">
+                    <table class="mytable">               
+                    <caption>User info <span class="message"><%= (submitted != null) ? "Update is Successful" : ""%></span></caption>
+                    <tr><td>ID: </td><td><input type="text" name="ID" value="<%= user.getID()%>" readonly="true" /></td></tr>
+                    <tr><td>Name: </td><td><input type="text" name="name" value="<%= user.getName()%>" /></td></tr>
+                    <tr><td>Email: </td><td><input type="text" name="email" value="<%= user.getEmail()%>" readonly="true"/></td></tr>
+                    <tr><td>Password: </td><td><input type="password" name="password" value="<%= user.getPassword()%>" /></td></tr>
                     <tr><td>DOB: </td><td><input type="date" name="dob" value="<%= user.getDOB()%>"/></td></tr>
                     <tr><input type="hidden" name="submitted" value="submitted"></tr>
                     <tr>
-                        <td> </td>
-                        <td>
-                            <input class="button" type="submit" value="Update" />
-                            <a class="button" href="delete.jsp">Delete</a>
-                        </td>
-                    </tr>
-                </table>
-              </form>
+                            <td>  <% if (emailView != null) { %>
+                                <a class="button" href="admin4.jsp">Accounts</a> 
+                                <%} else { %>
+                                <a class="button" href="main.jsp">Dashboard</a>
+                                <%}%> </td>
+                            <td>
+                                <input class="button" type="submit" value="Update" />
+                                <a class="button" href="delete.jsp">Delete</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
-          </div>
-        </div>        
-      <div id="clock" class="footer"></div>
-    </body>
+        </div>
+    </div>        
+    <div id="clock" class="footer"></div>
+</body>
 </html>
 

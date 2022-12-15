@@ -23,14 +23,13 @@
 
 <% String filename = application.getRealPath("/WEB-INF/users.xml");%>       
 <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
-    <jsp:setProperty name="userDAO" property="fileName" value="<%=filename%>"/>
+<jsp:setProperty name="userDAO" property="fileName" value="<%=filename%>"/>
 </jsp:useBean>
 
 <% Users users = userDAO.getUsers(); %>
 
 <c:import url="/xsl/users.xsl" var="xslt"/>
 <c:set var="xml">
-
     <users>
         <% for (User user : users.getUsers()) {%>
         <user>

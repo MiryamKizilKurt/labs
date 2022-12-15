@@ -29,7 +29,7 @@
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">
-            <a class="button" href="admin1.jsp">Admin</a>
+            <a class="button" href="admin.jsp">Admin</a>
             <a class="button" href="login.jsp">Login</a>          
             <a class="button" href="register.jsp">Register</a> 
             <a class="button" href="string.jsp">Strings</a>               
