@@ -14,31 +14,31 @@
         <link rel="stylesheet" href="css/layout.css"/>
         <script type="text/javascript" src="js/index.js"></script>
     </head>
-        <%
-            session.invalidate();
-            request.setAttribute("email", null);
-            request.removeAttribute("email");
-        %>
-        <% String filename = application.getRealPath("/WEB-INF/users.xml");%>
-        <% String xslPath = application.getRealPath("/xsl/users.xsl");%>
-        <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
+    <%
+        session.invalidate();
+        request.setAttribute("email", null);
+        request.removeAttribute("email");
+    %>
+    <% String filename = application.getRealPath("/WEB-INF/users.xml");%>
+    <% String xslPath = application.getRealPath("/xsl/users.xsl");%>
+    <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
         <jsp:setProperty name="userDAO" property="fileName" value="<%=filename%>"/>
-        </jsp:useBean>
+    </jsp:useBean>
 
-        <%
-            Users users = userDAO.getUsers();
-            XmlTransformer transformer = new XmlTransformer();
-            transformer.transform(xslPath, users, new StreamResult(out));
-        %>
+    <%
+        Users users = userDAO.getUsers();
+        XmlTransformer transformer = new XmlTransformer();
+        transformer.transform(xslPath, users, new StreamResult(out));
+    %>
     <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <div class="navbar-header navbar-left">             
-            <a class="button" href="logout.jsp">Logout</a>  
-            <a class="button" href="index.jsp">Home</a> 
-                </div>
+        <div class="container-fluid">
+            <div class="navbar-header navbar-left">             
+                <a class="button" href="logout.jsp">Logout</a>  
+                <a class="button" href="index.jsp">Home</a> 
             </div>
-        </nav>
-       <div class="container-fluid">       
+        </div>
+    </nav>
+    <div class="container-fluid">       
     </body>
-  <div id="clock" class="footer"></div>
+    <div id="clock" class="footer"></div>
 </html>

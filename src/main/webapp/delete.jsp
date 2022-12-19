@@ -17,21 +17,34 @@
         <title>Delete Page</title>
     </head>
     <body>
+        <%!
+            User user;
+        %>
         <% String filename = application.getRealPath("/WEB-INF/users.xml");%>
         <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
             <jsp:setProperty name="userDAO" property="fileName" value="<%=filename%>"/>
         </jsp:useBean>
-        <% 
-            User user = (User) session.getAttribute("user");
+        <%
             Users users = userDAO.getUsers();
-            userDAO.delete(users, user);
-            
+            String emailView = (String) session.getAttribute("emailView");
+            if (emailView != null) {
+                user = users.user(emailView);
+            } else {
+                user = (User) session.getAttribute("user");
+            }
+
+            if (user != null) {
+                userDAO.delete(users, user);
+                response.sendRedirect("admin4.jsp");
         %>
+        <!-- I don't need this at the moment since I redirect to admin page-->
+        <%= user.getName()%> record has been deleted! 
+
+        <%}%>
+        <% session.invalidate();%>
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">
-                <% session.invalidate(); %>
-                <h1 style=" color: #adff2f; font-size: 15px;"><%= user.getName() %> record has been deleted! <a class="button" href="index.jsp">Home</a></h1>    
                 </div>
             </div>
         </nav>

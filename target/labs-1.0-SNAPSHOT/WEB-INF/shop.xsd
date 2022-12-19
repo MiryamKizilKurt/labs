@@ -6,8 +6,8 @@
 
            
     xmlns:xs="http://www.w3.org/2001/XMLSchema"          
-    targetNamespace="http://www.xmllab.com/labshop"         
-    xmlns="http://www.xmllab.com/labshop"
+    targetNamespace="http://www.xmllabs.com/labsshop"         
+    xmlns="http://www.xmllab.com/labsshop"
     elementFormDefault="qualified">
 
  

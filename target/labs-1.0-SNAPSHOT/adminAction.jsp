@@ -16,7 +16,7 @@
     <body>
         <% String filename = application.getRealPath("/WEB-INF/admins.xml");%>
         <jsp:useBean id="adminDAO" class="com.model.dao.AdminDAO" scope="application">
-        <jsp:setProperty name="adminDAO" property="fileName" value="<%=filename%>"/>
+            <jsp:setProperty name="adminDAO" property="fileName" value="<%=filename%>"/>
         </jsp:useBean>
         <%
             String email = request.getParameter("email");
